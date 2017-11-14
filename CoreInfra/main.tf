@@ -18,3 +18,12 @@ resource "aws_subnet" "mon_subnet" {
     DateCreated = "14/11/2017"
   }
 }
+
+resource "aws_internet_gateway" "ma_gateway" {
+  vpc_id = "${aws_vpc.mon_vpc.id}"
+
+  tags {
+    Name        = "Gateway de Aurelien"
+    DateCreated = "14/11/2017"
+  }
+}
