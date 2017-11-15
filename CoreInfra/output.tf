@@ -10,6 +10,6 @@ output "subnet2_id"{
   value="${aws_subnet.mon_subnet.1.id}"
 }
 
-output "subnet_ids"{
+output "subnets"{
   value=["${aws_subnet.mon_subnet.*.id}"]
 }
