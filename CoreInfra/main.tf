@@ -18,6 +18,7 @@ resource "aws_subnet" "mon_subnet" {
   count = 2
   vpc_id                  = "${aws_vpc.mon_vpc.id}"
   cidr_block              = "${element(var.subnet_cidrs,count.index)}"
+  availability_zone       =  "${element(var.aws_az,count.index)}"
   map_public_ip_on_launch = true
   tags {
     Name        = "Subnet de Aurelien - ${count.index}"
